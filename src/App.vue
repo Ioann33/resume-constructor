@@ -25,25 +25,7 @@
       <h3>Добавьте первый блок, чтобы увидеть результат</h3>
     </div>
   </div>
-  <div class="container">
-    <p>
-      <AppButton
-          classes="primary"
-      >Загрузить комментарии</AppButton>
-    </p>
-    <div class="card">
-      <h2>Комментарии</h2>
-      <ul class="list">
-        <li class="list-item">
-          <div>
-            <p><strong>test@microsoft.com</strong></p>
-            <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, reiciendis.</small>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <AppLoader></AppLoader>
-  </div>
+  <AppComment></AppComment>
 </template>
 
 <script>
@@ -55,10 +37,12 @@ import ResumeAvatar from "@/components/ResumeParts/ResumeAvatar.vue";
 import ResumeSubtitle from "@/components/ResumeParts/ResumeSubtitle.vue";
 import ResumeContent from "@/components/ResumeParts/ResumeContent.vue";
 import AppLoader from "@/components/Elements/AppLoader.vue";
+import AppComment from "@/components/Blocks/AppComment.vue";
 
 export default {
   name: 'App',
   components: {
+    AppComment,
     AppLoader,
     ResumeContent,
     ResumeSubtitle,
