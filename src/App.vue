@@ -14,6 +14,7 @@
       <component :is="part.type" v-for="part in parts">{{part.content}}</component>
     </div>
   </div>
+  <AppComment></AppComment>
 </template>
 
 <script>
