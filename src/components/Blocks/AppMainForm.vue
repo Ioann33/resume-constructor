@@ -12,6 +12,7 @@
     <AppButton
         :classes="buttonClass"
         @action="submit"
+        :disabled="activeButton"
     >
       <slot name="button"></slot>
     </AppButton>
@@ -42,6 +43,13 @@ export default {
   methods: {
     submit() {
       this.$emit('submit', this.selectValue, this.textValue)
+      this.textValue = ''
+      this.selectValue = Object.keys(this.data.options)[0] ?? '';
+    }
+  },
+  computed: {
+    activeButton(){
+      return this.textValue.length < 4
     }
   }
 }
