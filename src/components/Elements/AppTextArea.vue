@@ -36,7 +36,7 @@ export default {
     change (event) {
       this.$emit('update:value', event.target.value)
     }
-  }
+  },
 }
 </script>
 

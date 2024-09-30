@@ -1,15 +1,20 @@
 <script>
 export default {
   name: "ResumeAvatar",
-  props: {
-    url: String
+  computed: {
+    defaultSlotText() {
+      // Проверяем и возвращаем текстовое содержимое слота
+      return this.$slots.default && this.$slots.default()[0] && typeof this.$slots.default()[0].children === 'string'
+          ? this.$slots.default()[0].children.trim()
+          : '';
+    }
   }
 }
 </script>
 
 <template>
   <div class="avatar">
-    <img :src="url" alt="avatar">
+    <img :src="defaultSlotText" alt="avatar">
   </div>
 </template>
 

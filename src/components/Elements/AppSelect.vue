@@ -1,7 +1,9 @@
 <template>
   <div class="form-control">
     <label :for="id">{{title}}</label>
-    <select :id="id">
+    <select :id="id"
+            :value="value"
+            @input="change">
       <option :value="i" v-for="(option, i) in options">{{option}}</option>
     </select>
   </div>
@@ -17,8 +19,15 @@ export default {
   },
   props: {
     title: String,
-    options: Object
+    options: Object,
+    value: String
+  },
+  methods: {
+    change (event) {
+      this.$emit('update:value', event.target.value)
+    }
   }
+
 }
 </script>
 

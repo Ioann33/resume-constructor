@@ -1,6 +1,6 @@
 <template>
   <div class="form-control">
-    <button class="btn" :class="classes" @click="$emit('action')">
+    <button class="btn" :class="classes" @click.prevent="$emit('action')">
       <slot></slot>
     </button>
   </div>
